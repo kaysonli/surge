@@ -2,9 +2,58 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>11.11红包入口</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>11.11快搜</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		.search {
+			border: 2px solid #E4393C;
+			width: 80%;
+			height: 30px;
+			max-width: 500px;
+			margin: auto;
+			margin-top: 30px;
+		}
+
+		.q {
+			outline: none;
+			border: none;
+			padding: 0;
+			margin: 0;
+			height: 100%;
+			padding-left: 10px;
+			display: inline-block;
+			width: 80%;	
+			font-size: 16px;
+		}
+
+		button {
+			border: none;
+			width: 20%;
+			height: 100%;
+			background: #E4393C;
+			color: #fff;
+			font-size: 16px;
+			display: inline-block;
+		}
+	</style>
 </head>
 <body>
-	<div style="height:80px;width:980px;margin:0 auto;margin-top: 400px;"><a href="https://s.click.taobao.com/OswYNOx" rel="nofollow" target="_blank"><img src="hongbao.jpg"></a></div>
+	<div style="height:80px;width:980px;margin:0 auto;margin-top: 400px; display: none;"><a href="https://s.click.taobao.com/OswYNOx" rel="nofollow" target="_blank"><img src="hongbao.jpg"></a></div>
+	<div class="search">
+		<input type="text" class="q" placeholder="11.11爆款"><button id="search">搜索</button>
+	</div>
+	<script>
+		window.addEventListener('load', function() {
+			document.getElementById('search').addEventListener('click', function() {
+				var url = 'https://ai.m.taobao.com/search.html?q={q}&pid=mm_34221849_18592274_65670502';
+				var key = document.querySelector('.q').value || '11.11爆款';
+				url = url.replace('{q}', encodeURIComponent(key));
+				location.href = url;
+			})
+		})
+	</script>
 </body>
 </html>
