@@ -3,9 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
-import VueTouch from 'vue-touch'
 
-Vue.use(VueTouch);
 
 const Foo = {
     template: '<div>foo</div>'
