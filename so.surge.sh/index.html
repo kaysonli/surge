@@ -1,10 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-	<meta charset="UTF-8">
-	<title>Google</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="任度搜，百度千度不如任度，打通互联网任督二脉。">
+    <title>任度搜</title>
+    <style>
+        body,
+        input,
+        button {
+            font-family: "Helvetica Neue", HelveticaNeue, "Helvetica", "Microsoft YaHei", "PingFang SC", "roboto", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+            font-size: 16px;
+        }
+        .main {
+            width: 60%;
+            max-width: 560px;
+            margin: auto;
+            margin-top: 100px;
+            text-align: center;
+        }
+        .search-box {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #4285f4;
+        }
+        .search-btn {
+            margin-top: 10px;
+            width: 150px;
+            height: 40px;
+            background: #4285f4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        .logo {
+            height: 220px;
+            background: url(logo.png) no-repeat;
+            background-size: contain;
+        }
+    </style>
 </head>
 <body>
-	<script src="auto.js"></script>
+    <a data-type="3" data-tmpl="200x200" data-tmplid="197" data-rd="2" data-style="1" data-border="1" href="#"></a>
+    <div class="main" id="form">
+        <div class="logo"></div>
+        <input type="text" id="key" class="search-box" placeholder="真的什么都可以搜">
+        <button class="search-btn" id="btn">我已年满18岁</button>
+    </div>
+    <script>
+        window.onload = function() {
+            function go() {
+                var keyword = document.getElementById('key').value;
+                if(keyword) {
+                    location.href = 'https://crazy-snout.hyperdev.space/#q=' + encodeURIComponent(keyword);
+                }
+            }
+            document.getElementById('btn').addEventListener('click', function(evt) {
+                go();
+            });
+            document.getElementById('key').addEventListener('keyup', function(evt) {
+                if(evt.keyCode === 13) {
+                    go();
+                }
+            });
+        }
+    </script>
+    <script type="text/javascript">
+    (function(win,doc){
+        var s = doc.createElement("script"), h = doc.getElementsByTagName("head")[0];
+        if (!win.alimamatk_show) {
+            s.charset = "gbk";
+            s.async = true;
+            s.src = "http://a.alimama.cn/tkapi.js";
+            h.insertBefore(s, h.firstChild);
+        };
+        var o = {
+            pid: "mm_34221849_18592274_67076311",/*推广单元ID，用于区分不同的推广渠道*/
+            appkey: "23528460",/*通过TOP平台申请的appkey，设置后引导成交会关联appkey*/
+            unid: "",/*自定义统计字段*/
+            type: "click" /* click 组件的入口标志 （使用click组件必设）*/
+        };
+        win.alimamatk_onload = win.alimamatk_onload || [];
+        win.alimamatk_onload.push(o);
+    })(window,document);
+</script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?cf638006272752cde7a6292000133395";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 </body>
 </html>
