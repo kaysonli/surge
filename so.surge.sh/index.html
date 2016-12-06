@@ -5,9 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <meta name="description" content="任度搜，百度千度不如任度，打通互联网任督二脉。">
+    <meta name="description" content="任度搜，百度千度不如任度，打通互联网任督二脉。免翻墙 Google ，无流量限制。">
     <title>任度搜</title>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
         body,
         input,
         button {
@@ -40,15 +44,25 @@
             background: url(logo.png) no-repeat;
             background-size: contain;
         }
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            color: #999;
+            text-align: center;
+        }
+        .copyright {
+            margin-right: 15px;
+        }
     </style>
 </head>
 <body>
-    <a data-type="3" data-tmpl="200x200" data-tmplid="197" data-rd="2" data-style="1" data-border="1" href="#"></a>
     <div class="main" id="form">
         <div class="logo"></div>
         <input type="text" id="key" class="search-box" placeholder="真的什么都可以搜">
-        <button class="search-btn" id="btn">我已年满18岁</button>
+        <button class="search-btn" id="btn">我已满18岁</button>
     </div>
+    <div class="footer"><span class="copyright">©2016 任度搜 - 免翻墙 Google</span><a href="terms.html" target="_blank">使用条款</a></div>
     <script>
         window.onload = function() {
             function go() {
