@@ -1,0 +1,33 @@
+---
+layout: post
+title: 戏剧面具
+category : 标识和符号
+keyword: 字符画,标识和符号字符画, 戏剧面具字符画
+
+---
+{% raw %}
+<pre>
+                                 ,A
+                                g@@
+            A.                 d@V@
+            i@b               iA` @                    .A
+            i@V@s            dA`  @                   ,@@i
+            i@ '*@Ws______mW@f    @@                  ]@@@
+             @]  '^********f`     @@@                g@!l@
+             @b           .  ,g   @@@W             ,W@[ l@
+             ]@   Mmmmmf  ~**f^   @@^@@Wm_.      _g@@`  l@
+              M[    ^^      ^^    @@  ^*@@@@@@@@@@@f`   l@
+              ]@i  '[]`  . '[]`   @@      ~~~~~~~`      l@
+              '@W       |[        @@               _.   l@
+               Y@i      'Ns    .  @@   _m@@m,    g*~VWi l@
+                M@. ,.       g@` ]@@  gP    V,  '  m- ` l@
+                '@W  Vmmmmmm@f   @@@. ~  m-    g   '    l@
+                 '@b  'V***f    g@A@W    '     @        l@
+                  '*W_         g@A`M@b       g M_.      l@
+                    'VMms___gW@@f   @@.      '- ~`      W@
+                       ~*****f~`     @@.     ,_m@Ws__   @@
+                                     '@@.   gA~`   ~~* ]@P
+                                       M@s.'`         g@A
+                                        V@@Ws.    __m@@A
+                                          ~*M@@@@@@@@*`   David Laundra </pre>
+{% endraw %}
