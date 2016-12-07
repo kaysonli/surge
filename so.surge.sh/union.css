@@ -1,0 +1,26 @@
+@media screen and (max-width: 420px) {
+    .ad-box {
+        display: none;
+    }
+}
+
+.union {
+    position: absolute;
+    right: 10px;
+    top: 150px;
+    width: 250px;
+}
+.union img {
+    width: 100%;
+}
+.title a {
+    color: red; text-align: center; display: block;text-decoration: none;
+}
+@media screen and (max-width: 420px) {
+    .union img {
+        display: none;
+    }
+    .logo {
+        height: 100px;
+    }
+}
