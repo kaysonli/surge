@@ -22,6 +22,7 @@ tags : [CSS布局]
 	<div style="display:table-cell; vertical-align:middle"> ... </div>
 
 在浏览器中的效果如下：
+{% raw %}
 <div id="tablecellexamples">
 	<table><tbody><tr>
 		<td valign="middle">&lt;td&gt; 使用 valign="middle"</td>
@@ -36,7 +37,7 @@ tags : [CSS布局]
 		<div style="display:table-cell; vertical-align:bottom">&lt;div&gt; 使用 display:table-cell; vertical-align:bottom</div>
 	</div>
 </div>
-
+{% endraw %}
 ### 内联元素中的`vertical-align`
 
 当`vertical-align`应用在内联元素中时，它完全是另外一种含义了。这种情况下，它的行为跟`img`标签的`align`（已废弃不用）属性类似。在标准的现代浏览器中，下面三种写法的效果是一样的：

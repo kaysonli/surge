@@ -8,7 +8,7 @@ date: 2014-06-27
 tags : [工具]
 ---
 
-
+{% raw %}
 本文收集了常见的颜色以及对应的中英文名字、十六进制表示和RGB值。
 <!--break-->
 <table log-set-param="table_view" width="0" class="table-view log-set-param">
@@ -1919,3 +1919,5 @@ tags : [工具]
         </tr>
     </tbody>
 </table>
+
+{% endraw %}
