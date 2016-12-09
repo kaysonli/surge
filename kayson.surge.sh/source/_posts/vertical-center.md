@@ -46,15 +46,13 @@ tags : [CSS布局]
 	<img style="vertical-align:middle" ...>
 	<span style="display:inline-block; vertical-align:middle"> foo<br>bar </span>
 
-这段文字中，图片使用`align:middle` <img class="align-demo" src="{{ BASE_PATH }}/image/weixin2.png" alt="" align="middle" />
 
-这段文字中，图片使用`align:bottom` <img class="align-demo" src="{{ BASE_PATH }}/image/weixin2.png" alt="" align="bottom" style="vertical-align: initial" />
-
-这段文字中，图片使用`vertical-align:middle` <img class="align-demo" src="{{ BASE_PATH }}/image/weixin2.png" alt="" style="vertical-align: middle"/>
-
-这段文字中，图片使用`vertical-align:bottom` <img class="align-demo" src="{{ BASE_PATH }}/image/weixin2.png" alt="" style="vertical-align: bottom" />
+![](https://i1.piimg.com/567571/10a74a0ced54f3f4.png)
+{% raw %}
 
 <p>In this paragraph, I have a cute little <code>&lt;span&gt;</code> <span style="display:inline-block; vertical-align:middle;border: 1px solid red;">display:inline-block<br>vertical-align:middle</span> and <span style="display:inline-block; vertical-align:text-bottom;border: 1px solid red;">display:inline-block<br>vertical-align:text-bottom</span> as an example.</p>
+
+{% endraw %}
 
 可以看出，这里的`vertical-align`把文字当做基准线来对齐。
 
@@ -81,12 +79,8 @@ tags : [CSS布局]
 		</div>
 
 在浏览器中的效果如下：
-<div id="myoutercontainer">
-		<div id="myinnercontainer">
-			<p>看吧! 垂直居中了!</p>
-			<p>How sweet is this?!</p>
-		</div>
-</div>
+
+![](https://i1.piimg.com/567571/5d4a268a0c8e8690.png)
 
 #### 方法二
 
@@ -101,6 +95,5 @@ tags : [CSS布局]
 	</p>
 
 看效果：
-<p id="myoutercontainer2">
-		伙计，我也垂直居中了！
-</p>
+
+![](http://i1.piimg.com/567571/74e3b5ffa548a3be.png)
