@@ -77,11 +77,26 @@
     </style>
 </head>
 <body>
+    <div style="height: 50px; line-height: 50px;background-color: #333;color: #fff;">
+        <span>网址：</span><input type="text" id="proxy-url" style="width: 400px;margin-right: 10px;font-size: 16px"><button id="browse">GO</button>
+        <script>
+            +function() {
+                var input = document.getElementById('proxy-url');
+                if(location.href.split('?').lenght > 1) {
+                    input.value = location.href.split('?')[1].split('=')[1];
+                }
+                document.getElementById('browse').addEventListener('click', function() {
+                    var url = input.value;
+                    window.location = window.location.href.split('?')[0] + '?u=' + encodeURIComponent(url);
+                })
+            }()
+        </script>
+    </div>
 	<!-- <div class="union">
 		<a href="https://s.click.taobao.com/8itAcKx?hmsr=%E9%98%BF%E9%87%8C%E5%A6%88%E5%A6%88&hmpl=%E5%8F%8C%E5%8D%81%E4%BA%8C&hmcu=%E4%B8%BB%E5%9C%BA&hmkw=&hmci=" target="_blank"><img src="https://img.alicdn.com/tps/TB1WhZcOpXXXXbbXVXXXXXXXXXX-440-180.jpg" alt=""></a>
 		<div class="title"><a href="https://s.click.taobao.com/8itAcKx?hmsr=%E9%98%BF%E9%87%8C%E5%A6%88%E5%A6%88&hmpl=%E5%8F%8C%E5%8D%81%E4%BA%8C&hmcu=%E4%B8%BB%E5%9C%BA&hmkw=&hmci=" target="_blank">厉害了，千万现金红包要不要？</a></div>
 	</div> -->
-    <div class="union">
+    <div class="union" style="display: none;">
         <a href="http://union.click.jd.com/jdc?e=&p=AyIHZRlSFQsUDlUYXiUCFQVRGVITBxAFZV8ETVxNNwxeHlQJDBkNXg9JHU4YDk5ER1xOGRNLGEEcVV8BXURFUFdfC0RVU1JRUy1OVxUFEANXEl0QABA3T2MkaHByZR5%2BGG8BZh0cGT1DXWcANRdXJQUXAVcSWRIEIgJRGl8cBRU3ZX0mJUN8B1AYXhMLIgdTGFwRBxYPVCtbEAsSBVMdXRAHGwNRK1wlMiI%3D&t=W1dCFBBFC1pXUwkEBwpZRxgHRQcLREJEAQUcTVZUGAVJHk1cTQkTSxhBekcLVRxZEQAbAVAZWQ%3D%3D" target="_blank"><img src="//img13.360buyimg.com/n1/jfs/t1693/137/488040653/126693/3eb75bab/55a4b39aN7856589c.jpg" alt=""></a>
         <div class="title"><a href="http://union.click.jd.com/jdc?e=&p=AyIHZRlSFQsUDlUYXiUCFQVRGVITBxAFZV8ETVxNNwxeHlQJDBkNXg9JHU4YDk5ER1xOGRNLGEEcVV8BXURFUFdfC0RVU1JRUy1OVxUFEANXEl0QABA3T2MkaHByZR5%2BGG8BZh0cGT1DXWcANRdXJQUXAVcSWRIEIgJRGl8cBRU3ZX0mJUN8B1AYXhMLIgdTGFwRBxYPVCtbEAsSBVMdXRAHGwNRK1wlMiI%3D&t=W1dCFBBFC1pXUwkEBwpZRxgHRQcLREJEAQUcTVZUGAVJHk1cTQkTSxhBekcLVRxZEQAbAVAZWQ%3D%3D
 " target="_blank">暖手宝移动电源，创意礼物</a></div>
