@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -44,6 +45,9 @@
             background: url(logo.png) no-repeat;
             background-size: contain;
         }
+        .logo.spinner {
+            background: none;
+        }
         .footer {
             position: absolute;
             bottom: 10px;
@@ -55,54 +59,98 @@
             margin-right: 15px;
         }
         .union {
-        	position: absolute;
-        	left: 10px;
-        	top: 20px;
-        	width: 250px;
+            position: absolute;
+            left: 10px;
+            top: 20px;
+            width: 250px;
         }
         .union img {
-        	width: 100%;
+            width: 100%;
         }
         .title a {
-        	color: red; text-align: center; display: block;text-decoration: none;
+            color: red; text-align: center; display: block;text-decoration: none;
         }
         @media screen and (max-width: 420px) {
-        	.union img {
-        		display: none;
-        	}
-        	.logo {
-        		height: 100px;
-        	}
+            .union img {
+                display: none;
+            }
+            .logo {
+                height: 100px;
+            }
+        }
+
+        .spinner {
+          margin: 100px auto;
+          width: 50px;
+          height: 60px;
+          text-align: center;
+          font-size: 10px;
+        }
+         
+        .spinner > div {
+          background-color: #67CF22;
+          height: 100%;
+          width: 6px;
+          display: inline-block;
+           
+          -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+          animation: stretchdelay 1.2s infinite ease-in-out;
+        }
+         
+        .spinner .rect2 {
+          -webkit-animation-delay: -1.1s;
+          animation-delay: -1.1s;
+        }
+         
+        .spinner .rect3 {
+          -webkit-animation-delay: -1.0s;
+          animation-delay: -1.0s;
+        }
+         
+        .spinner .rect4 {
+          -webkit-animation-delay: -0.9s;
+          animation-delay: -0.9s;
+        }
+         
+        .spinner .rect5 {
+          -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s;
+        }
+         
+        @-webkit-keyframes stretchdelay {
+          0%, 40%, 100% { -webkit-transform: scaleY(0.4) } 
+          20% { -webkit-transform: scaleY(1.0) }
+        }
+         
+        @keyframes stretchdelay {
+          0%, 40%, 100% {
+            transform: scaleY(0.4);
+            -webkit-transform: scaleY(0.4);
+          }  20% {
+            transform: scaleY(1.0);
+            -webkit-transform: scaleY(1.0);
+          }
         }
     </style>
 </head>
 <body>
-    <div style="height: 50px; line-height: 50px;background-color: #333;color: #fff;">
-        <span>网址：</span><input type="text" id="proxy-url" style="width: 400px;margin-right: 10px;font-size: 16px"><button id="browse">GO</button>
-        <script>
-            +function() {
-                var input = document.getElementById('proxy-url');
-                if(location.href.split('?').lenght > 1) {
-                    input.value = location.href.split('?')[1].split('=')[1];
-                }
-                document.getElementById('browse').addEventListener('click', function() {
-                    var url = input.value;
-                    window.location = window.location.href.split('?')[0] + '?u=' + encodeURIComponent(url);
-                })
-            }()
-        </script>
-    </div>
-	<!-- <div class="union">
-		<a href="https://s.click.taobao.com/8itAcKx?hmsr=%E9%98%BF%E9%87%8C%E5%A6%88%E5%A6%88&hmpl=%E5%8F%8C%E5%8D%81%E4%BA%8C&hmcu=%E4%B8%BB%E5%9C%BA&hmkw=&hmci=" target="_blank"><img src="https://img.alicdn.com/tps/TB1WhZcOpXXXXbbXVXXXXXXXXXX-440-180.jpg" alt=""></a>
-		<div class="title"><a href="https://s.click.taobao.com/8itAcKx?hmsr=%E9%98%BF%E9%87%8C%E5%A6%88%E5%A6%88&hmpl=%E5%8F%8C%E5%8D%81%E4%BA%8C&hmcu=%E4%B8%BB%E5%9C%BA&hmkw=&hmci=" target="_blank">厉害了，千万现金红包要不要？</a></div>
-	</div> -->
-    <div class="union" style="display: none;">
+    <!-- <div class="union">
+        <a href="https://s.click.taobao.com/8itAcKx?hmsr=%E9%98%BF%E9%87%8C%E5%A6%88%E5%A6%88&hmpl=%E5%8F%8C%E5%8D%81%E4%BA%8C&hmcu=%E4%B8%BB%E5%9C%BA&hmkw=&hmci=" target="_blank"><img src="https://img.alicdn.com/tps/TB1WhZcOpXXXXbbXVXXXXXXXXXX-440-180.jpg" alt=""></a>
+        <div class="title"><a href="https://s.click.taobao.com/8itAcKx?hmsr=%E9%98%BF%E9%87%8C%E5%A6%88%E5%A6%88&hmpl=%E5%8F%8C%E5%8D%81%E4%BA%8C&hmcu=%E4%B8%BB%E5%9C%BA&hmkw=&hmci=" target="_blank">厉害了，千万现金红包要不要？</a></div>
+    </div> -->
+    <!-- <div class="union" style="display: none;">
         <a href="http://union.click.jd.com/jdc?e=&p=AyIHZRlSFQsUDlUYXiUCFQVRGVITBxAFZV8ETVxNNwxeHlQJDBkNXg9JHU4YDk5ER1xOGRNLGEEcVV8BXURFUFdfC0RVU1JRUy1OVxUFEANXEl0QABA3T2MkaHByZR5%2BGG8BZh0cGT1DXWcANRdXJQUXAVcSWRIEIgJRGl8cBRU3ZX0mJUN8B1AYXhMLIgdTGFwRBxYPVCtbEAsSBVMdXRAHGwNRK1wlMiI%3D&t=W1dCFBBFC1pXUwkEBwpZRxgHRQcLREJEAQUcTVZUGAVJHk1cTQkTSxhBekcLVRxZEQAbAVAZWQ%3D%3D" target="_blank"><img src="//img13.360buyimg.com/n1/jfs/t1693/137/488040653/126693/3eb75bab/55a4b39aN7856589c.jpg" alt=""></a>
         <div class="title"><a href="http://union.click.jd.com/jdc?e=&p=AyIHZRlSFQsUDlUYXiUCFQVRGVITBxAFZV8ETVxNNwxeHlQJDBkNXg9JHU4YDk5ER1xOGRNLGEEcVV8BXURFUFdfC0RVU1JRUy1OVxUFEANXEl0QABA3T2MkaHByZR5%2BGG8BZh0cGT1DXWcANRdXJQUXAVcSWRIEIgJRGl8cBRU3ZX0mJUN8B1AYXhMLIgdTGFwRBxYPVCtbEAsSBVMdXRAHGwNRK1wlMiI%3D&t=W1dCFBBFC1pXUwkEBwpZRxgHRQcLREJEAQUcTVZUGAVJHk1cTQkTSxhBekcLVRxZEQAbAVAZWQ%3D%3D
 " target="_blank">暖手宝移动电源，创意礼物</a></div>
-    </div>
+    </div> -->
     <div class="main" id="form">
-        <div class="logo"></div>
+        <div class="logo" id="logo">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
         <input type="text" id="key" class="search-box" placeholder="真的什么都可以搜">
         <button class="search-btn" id="btn">我已满18岁</button>
     </div>
@@ -110,8 +158,10 @@
     <script>
         window.onload = function() {
             function go() {
+                var logo = document.getElementById('logo');
                 var keyword = document.getElementById('key').value;
                 if(keyword) {
+                    logo.classList.add('spinner');
                     location.href = 'https://crazy-snout.hyperdev.space/#q=' + encodeURIComponent(keyword);
                 }
             }
