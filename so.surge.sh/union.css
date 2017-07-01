@@ -5,7 +5,7 @@
 }
 
 .union {
-    position: absolute;
+    position: fixed;
     right: 10px;
     top: 150px;
     width: 250px;
@@ -17,8 +17,10 @@
     color: red; text-align: center; display: block;text-decoration: none;
 }
 @media screen and (max-width: 420px) {
-    .union img {
-        display: none;
+    .union {
+        bottom: 70px;
+        top: auto;
+        left: 0;
     }
     .logo {
         height: 100px;
