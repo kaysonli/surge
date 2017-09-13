@@ -42,7 +42,7 @@
         }
         .logo {
             height: 220px;
-            background: url(logo.png) no-repeat;
+            background: url(logo.jpg) no-repeat;
             background-size: contain;
         }
         .logo.spinner {
@@ -69,6 +69,9 @@
         }
         .title a {
             color: red; text-align: center; display: block;text-decoration: none;
+        }
+        .link {
+            margin-left: 10px;
         }
         @media screen and (max-width: 420px) {
             .union img {
@@ -154,7 +157,9 @@
         <input type="text" id="key" class="search-box" placeholder="真的什么都可以搜">
         <button class="search-btn" id="btn">我已满18岁</button>
     </div>
-    <div class="footer"><span class="copyright">©2016 任度搜 - 免翻墙 Google</span><a href="terms.html" target="_blank">使用条款</a></div>
+    <div class="footer"><span class="copyright">©2016 任度搜 - 免翻墙 Google</span><a href="terms.html" target="_blank">使用条款</a><span class="link">友情链接：</span><a href="http://www.soquan.bid">搜券必得</a>
+    </div>
+
     <script>
         window.onload = function() {
             function go() {
@@ -162,7 +167,7 @@
                 var keyword = document.getElementById('key').value;
                 if(keyword) {
                     logo.classList.add('spinner');
-                    location.href = 'https://crazy-snout.hyperdev.space/#q=' + encodeURIComponent(keyword);
+                    location.href = 'https://prism-kangaroo.glitch.me/#q=' + encodeURIComponent(keyword);
                 }
             }
             document.getElementById('btn').addEventListener('click', function(evt) {
