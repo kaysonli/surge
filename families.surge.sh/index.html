@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝优惠券搜索</title>
+    <meta name="keywords" content="搜券,淘宝优惠券,天猫优惠券,优惠码,白菜价,9块9包邮" />
+    <meta name="description" content="淘宝优惠券搜索" />
+
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <style>
+        html,body {
+            height: 100%;
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", HelveticaNeue, "Helvetica", "roboto", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+        }
+        .main {
+            min-height: 100%;
+            margin-bottom: -30px;
+            padding: 0 15px;
+        }
+        .main:after {
+            content: ' ';
+            height: 30px;
+            display: block;
+        }
+        body {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        header {
+            overflow: hidden;
+        }
+        footer {
+            text-align: center;
+            height: 30px;
+            color: #666;
+        }
+        footer a {
+            color: #666;
+            text-decoration: none;
+        }
+        .site-name {
+            text-align: center;
+            color: #666;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .logo {
+            width: 250px;
+            height: 78px;
+            margin: auto;
+            margin-top: 120px;
+            background: url(logo.png) no-repeat;
+            background-size: contain;
+        }
+        .search-box {
+            width: 90%;
+            max-width: 480px;
+            margin: auto;
+            margin-top: 50px;
+        }
+        .keyword, .btn {
+            display: inline-block;
+            vertical-align: top;
+            height: 40px;
+            box-sizing: border-box;
+        }
+        .keyword {
+            width: 70%;
+            padding: 5px;
+            border: 1px solid #CD1B1D;
+        }
+        .keyword:focus {
+            border: 1px solid #CD1B1D;
+            outline: 0;
+        }
+        .btn {
+            width: 30%;
+            background: #CD1B1D;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            outline: 0;
+        }
+        img {
+            width: 120px;
+            height: 120px;
+        }
+        th {
+            white-space: nowrap;
+            background: #e5f2fa;
+            border-bottom: 1px solid #a2c6d3;
+            border-top: 1px solid #a2c6d3;
+            padding: 10px;
+        }
+        tr {
+            border-bottom: 1px solid #CD1B1D;
+        }
+        td {
+            padding: 10px;
+        }
+        #list {
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 80%;
+            max-width: 1024px;
+            border-collapse: collapse;
+        }
+        .title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .price, .discount {
+            color: #d22147;
+        }
+        .expires {
+            color: #666;
+        }
+        .mobile {
+            display: none;
+        }
+        @media screen and (max-width: 414px) {
+            .mobile {
+                display: block;
+            }
+            .collapse {
+                display: none;
+            }
+            #list {
+                width: 100%;
+            }
+        }
+        .loading{
+            width: 80px;
+            height: 40px;
+            margin: 0 auto;
+            margin-top:100px;
+        }
+        .loading span{
+            display: inline-block;
+            width: 8px;
+            height: 100%;
+            border-radius: 4px;
+            background: lightgreen;
+            -webkit-animation: load 1s ease infinite;
+        }
+        @-webkit-keyframes load{
+            0%,100%{
+                height: 40px;
+                background: lightgreen;
+            }
+            50%{
+                height: 70px;
+                margin: -15px 0;
+                background: lightblue;
+            }
+        }
+        .loading span:nth-child(2){
+            -webkit-animation-delay:0.2s;
+        }
+        .loading span:nth-child(3){
+            -webkit-animation-delay:0.4s;
+        }
+        .loading span:nth-child(4){
+            -webkit-animation-delay:0.6s;
+        }
+        .loading span:nth-child(5){
+            -webkit-animation-delay:0.8s;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script id="tpl" type="text/template">
+        <td class="mobile">
+            <div class="title">{title}</div>
+            <div>价格：<span class="price">{price}元</span></div>
+            <div>优惠券：<span class="discount">{discount}</span></div>
+            <div>有效期：<span class="expires">{expires}</span></div>
+            <div class=""><a href="{url}">领券购买</a></div>
+        </td>
+    </script>
+</head>
+<body>
+    <div class="main">
+        <header>
+            <div class="logo"></div>
+        </header>
+        <div class="site-name">淘宝优惠券搜索系统</div>
+        <form class="search-box">
+            <input autofocus="autofocus" class="keyword" type="text" placeholder="请输入要查找优惠券的商品名称"><input type="submit" class="btn" value="搜索">
+        </form>
+        <div class="loading hidden">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <table id="list">
+        </table>
+    </div>
+    <footer><span>copyright ©families.surge.sh 版权所有</span></footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./app.js"></script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d3417ddf73112b2999fa454443629b03";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>
